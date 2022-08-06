@@ -63,9 +63,12 @@ export const Details = ({
 
             {isOwnerOrHasRole &&
                 <>
-                     <Link to={`/delete/${figure._id}`}>Delete</Link>
+
+<button className={styles['back-btn']}>  <Link to={`/delete/${figure._id}`} className={styles['link-style']}>Delete</Link></button>
+                     {/* <Link to={`/delete/${figure._id}`}>Delete</Link> */}
                   
-                   <Link to={`/edit/${figure._id}`}>Edit</Link>
+                     <button className={styles['back-btn']}><Link to={`/edit/${figure._id}`} className={styles['link-style']}>Edit</Link></button>
+                   {/* <Link to={`/edit/${figure._id}`}>Edit</Link> */}
                  
                 </>
             }
