@@ -31,9 +31,13 @@ export const getFigure = async(figureId)=>{
 export const deleteFigureById = async(figureId)=>{
     const response = await fetch(`${figuresBaseUrl}/delete/${figureId}`);
 
-    const result = await response.json();
-    
-    return result;
+    const result = await response.json()
+   return result;
+}
+
+export const likeFigure = async(figureId,token)=>{
+    const response = await fetch(`${figuresBaseUrl}/like/${figureId}`);
+
 }
 
 export const updateFigureById = async(figureId, figureData)=>{

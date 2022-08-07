@@ -20,6 +20,7 @@ import { Create } from './components/create/Create';
 import { Details } from './components/details/Details';
 import { Edit } from './components/edit/Edit';
 import { Logout } from './components/logout/Logout';
+import { Delete } from './components/delete/Delete';
 
 
 
@@ -128,7 +129,7 @@ function App() {
 					<Route path='/logout' element={<Logout/>} />
 					<Route  path='/details/:figureId' element={<Details  {...user}/>} />
 					<Route  path='/edit/:figureId' element={<Edit  />} />
-					<Route  path='/delete/:figureId'  />
+					<Route  path='/delete/:figureId' element={<Delete/>} />
 				</Routes>
 				<Footer />
 			</Router>
