@@ -49,12 +49,25 @@ export const login = async (email,password)=>{
     }
 }
 
-export const logout = async()=>{
+export const logout = async(accessToken)=>{
 
-   const response = await fetch(`${usersBaseUrl}/logout`);
+    try {
+        const response = await fetch(`${usersBaseUrl}/logout`,{
+            headers:{
+                'X-Authorization':accessToken
+            }
+           });
 
-   const result = await response.json();
+       
 
-   return result
+
+    } catch (error) {
+        console.log(error);
+    }
+
+
+//    const result = await response.json();
+
+//    return result
 
 }

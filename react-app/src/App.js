@@ -19,6 +19,8 @@ import { getAll } from './services/figureService';
 import { Create } from './components/create/Create';
 import { Details } from './components/details/Details';
 import { Edit } from './components/edit/Edit';
+import { Logout } from './components/logout/Logout';
+
 
 
 
@@ -123,7 +125,7 @@ function App() {
 					{/* ne znam dali na figureCreateHandler se podawa funkciq */}
 					<Route path='/create' element={<Create figureCreateHandler={figureCreateHandler} />} />
 					<Route path='/login' element={<Login  />} />
-					<Route path='/logout'  />
+					<Route path='/logout' element={<Logout/>} />
 					<Route  path='/details/:figureId' element={<Details  {...user}/>} />
 					<Route  path='/edit/:figureId' element={<Edit  />} />
 					<Route  path='/delete/:figureId'  />
