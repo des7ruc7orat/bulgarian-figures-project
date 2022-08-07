@@ -39,8 +39,6 @@ exports.register = async ({ email, username, password }) => {
 
 exports.logout = (token)=>{
     blacklist.add(token);
-   
-   
     
 }
 
