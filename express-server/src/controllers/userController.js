@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const userSerice = require('../services/userService');
 
-const {verifyToken} = require('../middlewares/authMiddleware');
+const { auth,verifyToken} = require('../middlewares/authMiddleware');
 
 router.post('/register', async (req, res) => {
     const { username, email, password, repeatPassword } = req.body;
@@ -45,8 +45,9 @@ router.post('/login',async (req, res) => {
 
 });
 
-router.get('/logout', (req,res) => {
-    userSerice.logout(req.user.token);
+router.get('/logout',auth, (req,res) => {
+    
+    userSerice.logout(req.user.accessToken);
     res.status(204).end();
 });
 

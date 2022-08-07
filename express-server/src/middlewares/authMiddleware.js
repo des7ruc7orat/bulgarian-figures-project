@@ -14,10 +14,12 @@ exports.auth = function (req, res, next) {
     if (token) {
         let decodedToken = jwt.verify(token, SECRET);
         if (decodedToken) {
+            
             req.user = {
                 email:decodedToken.email,
                 _id:decodedToken._id,
-                username: decodedToken.username
+                username: decodedToken.username,
+                accessToken: token
             }
            
             next();

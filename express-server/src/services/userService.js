@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 
 const blacklist = new Set();
 
+
+
 const { SECRET, SALTED_ROUNDS } = require('../config/env');
 
 //exports.register = ({username,email,password}) => User.create({username,email,password})
@@ -37,6 +39,9 @@ exports.register = async ({ email, username, password }) => {
 
 exports.logout = (token)=>{
     blacklist.add(token);
+   
+   
+    
 }
 
 exports.login = async ({ email, password }) => {
@@ -82,6 +87,7 @@ async function createSession(user) {
     });
     // const token = jwt.sign(payload, SECRET,options)
 
+    
     return {
         accessToken: tokenPromise,
         email: user.email,
