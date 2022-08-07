@@ -64,3 +64,26 @@ text-overflow: ellipsis;
     margin-left: 25%;
    
 }
+
+.link-style {
+    text-decoration: none;
+  
+    color: black;
+    letter-spacing: 1px;
+    font-size: 17px;
+  }
+
+  .details-btn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+   
+    margin-left: 30%;
+  }

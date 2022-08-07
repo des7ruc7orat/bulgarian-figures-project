@@ -16,7 +16,8 @@ export const FigureItem = ({
         </div>
 
         <div>
-                <Link to={`/details/${figure._id}`} className={styles.btn}>Detail</Link>
+            <button className={styles['details-btn']}><Link to={`/details/${figure._id}`} className={styles['link-style']}>Details</Link></button>
+               
         </div>
 
     </div>
