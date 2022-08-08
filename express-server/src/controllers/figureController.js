@@ -26,13 +26,7 @@ router.get('/details/:figureId', async (req, res) => {
     }
 });
 
-router.get('/delete/:figureId', auth, async (req, res) => {
-    const figureId = req.params.figureId;
 
-    const result = await api.deleteFigureById(figureId);
-
-    res.json(result)
-});
 
 
 
@@ -136,6 +130,22 @@ router.post('/create', auth, async (req, res) => {
 
 
 });
+
+
+router.get('/delete/:figureId', async (req, res) => {
+    console.log('try to delete');
+      try {
+          const figureId = req.params.figureId;
+  console.log(figureId);
+         const result = await api.deleteFigureById(figureId);
+          
+         res.json(result)
+      } catch (error) {
+          console.log(error);
+          res.json(error);
+      }
+     
+  });
 
 
 

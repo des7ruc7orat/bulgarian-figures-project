@@ -32,7 +32,7 @@ export const deleteFigureById = async(figureId)=>{
     const response = await fetch(`${figuresBaseUrl}/delete/${figureId}`);
 
     const result = await response.json()
-   return result;
+   return response;
 }
 
 export const likeFigure = async(figureId,token)=>{

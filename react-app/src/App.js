@@ -36,6 +36,7 @@ function App() {
 		role:''
 	});
 
+	console.log(user);
 
 
 	const login = (authData) => {

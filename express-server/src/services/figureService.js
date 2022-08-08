@@ -10,9 +10,9 @@ async function getAllFigures(){
    
 }
 
-async function deleteFigureById(figureId){
+ function deleteFigureById(figureId){
 
-    return Figure.findByIdAndDelete(figureId);
+    return  Figure.findByIdAndDelete(figureId);
 }
 
  async function getUserId (userId){
