@@ -73,6 +73,14 @@
   border-radius: 50%;
 }
 
+.p-descr{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: red;
+}
+
 .link-style {
   text-decoration: none;
 

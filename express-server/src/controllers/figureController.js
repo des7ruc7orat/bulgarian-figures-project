@@ -40,7 +40,6 @@ router.get('/like/:figureId', auth, async (req, res) => {
 
     await figure.save();
 
-
     res.json(figure);
 });
 

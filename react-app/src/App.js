@@ -21,6 +21,7 @@ import { Details } from './components/details/Details';
 import { Edit } from './components/edit/Edit';
 import { Logout } from './components/logout/Logout';
 import { Delete } from './components/delete/Delete';
+import { Like } from './components/like/Like';
 
 
 
@@ -131,6 +132,7 @@ function App() {
 					<Route  path='/details/:figureId' element={<Details  {...user}/>} />
 					<Route  path='/edit/:figureId' element={<Edit  />} />
 					<Route  path='/delete/:figureId' element={<Delete/>} />
+					<Route  path='/like/:figureId' element={<Like/>} />
 				</Routes>
 				<Footer />
 			</Router>

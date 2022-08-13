@@ -31,12 +31,15 @@ export const Details = ({
 
     const isOwnerOrHasRole = figure.creator?._id == user._id || user?.role;
     const isNotOwner = figure.creator?._id != user._id;
+   const isOwner =  figure.creator?._id == user._id;
     console.log(user.role);
 
     const noSecondName = figure.secondName === 'None' ? '': figure.secondName;
 
-
-
+    const permissionForLikes = !user?.email =="" &&!isOwner
+const figureLikes = figure.likes?.length 
+console.log(permissionForLikes + ' permissi');
+console.log( !isOwner+ ' isnotowner');
     return (
 
         <section>
@@ -50,13 +53,17 @@ export const Details = ({
 
             <h2 className={styles.name}>{figure.firstName} {noSecondName}  {figure.familyName}</h2>
             <p className={styles['person-nickname']}>Nickname: {figure.nickname}</p>
-            <p className={styles['date-of-born-and-dead']}>{figure.yearBorn}-{figure.yearDied}</p>
+            
 
-            <p className={styles['description-of-person']}>{figure.description}</p>
 
-            <p className={styles.likes}>Likes: 0</p>
-            {isNotOwner &&
-                <button>Like</button>
+            <p className={styles['date-of-born-and-dead']}>Year of born: {figure.yearBorn} -  Year of dead: {figure.yearDied}</p>
+
+            <p className={styles['description-of-person']}>Description: {figure.description}</p>
+
+            <p className={styles.likes}>Likes: {figureLikes}</p>
+            {permissionForLikes &&
+               <button className={styles['back-btn']}>  <Link to={`/like/${figure._id}`} className={styles['link-style']}>Like</Link></button>
+              
             }
 
             <p>You have already liked this publication</p>

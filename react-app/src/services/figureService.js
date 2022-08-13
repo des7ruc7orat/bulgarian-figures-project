@@ -38,6 +38,7 @@ export const deleteFigureById = async(figureId)=>{
 export const likeFigure = async(figureId,token)=>{
     const response = await fetch(`${figuresBaseUrl}/like/${figureId}`);
 
+    return response;
 }
 
 export const updateFigureById = async(figureId, figureData)=>{
